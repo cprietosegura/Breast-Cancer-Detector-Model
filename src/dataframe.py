@@ -7,7 +7,7 @@ import pickle
 #en este script están las funciones para crear un dataframe a partir 
 # de las imagenes y exportarlo
 
-def readImages(path1,path2):
+def readImages(path1,path0):
     #el primero crea dataframe con 200 de una clase y 200 de otra
     #el segubndo crea dataframe con los 1000 de una clase y 1000 de otra
     images=[]
@@ -17,12 +17,12 @@ def readImages(path1,path2):
     #path_0 = './images/0/*'
     #path_1 = './images/1/*'
     
-    for file in glob.glob(path1)[:15000]:
+    for file in glob.glob(path1)[:1000]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(1)
             
-    for file in glob.glob(path2)[:15000]:
+    for file in glob.glob(path0)[:1000]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(0)
