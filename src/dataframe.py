@@ -3,6 +3,8 @@ import glob
 import cv2
 import os
 import pickle
+import numpy as np
+from scipy.fftpack import fft
 
 #en este script están las funciones para crear un dataframe a partir 
 # de las imagenes y exportarlo
@@ -17,20 +19,28 @@ def readImages(path1,path0):
     #path_0 = './images/0/*'
     #path_1 = './images/1/*'
     
-    for file in glob.glob(path1)[:1000]:
+    for file in glob.glob(path1)[:200]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(1)
             
-    for file in glob.glob(path0)[:1000]:
+    for file in glob.glob(path0)[:200]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(0)
     
     return images,labels,paths
 
-def createDf(labels, images, paths):
-    df = pd.DataFrame(list(zip(labels, images, paths)), columns =['label', 'image', 'path']) 
+
+def fftransform(lst):
+    '''fft to all the array images in a list'''
+    tff=[]
+    for im in lst:
+        tff.append(np.abs(fft(im,512)))
+    return tff
+
+def createDf(labels, images, paths,tff):
+    df = pd.DataFrame(list(zip(labels, images, paths,tff)), columns =['label', 'image', 'path', 'tff']) 
     return df
 
 def resizeImages(img_path,size=(50,50)):
