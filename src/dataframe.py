@@ -19,12 +19,12 @@ def readImages(path1,path0):
     #path_0 = './images/0/*'
     #path_1 = './images/1/*'
     
-    for file in glob.glob(path1)[:200]:
+    for file in glob.glob(path1)[:15000]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(1)
             
-    for file in glob.glob(path0)[:200]:
+    for file in glob.glob(path0)[:15000]:
         images.append(cv2.imread(file))
         paths.append(os.path.relpath(file))
         labels.append(0)
@@ -39,8 +39,8 @@ def fftransform(lst):
         tff.append(np.abs(fft(im,512)))
     return tff
 
-def createDf(labels, images, paths,tff):
-    df = pd.DataFrame(list(zip(labels, images, paths,tff)), columns =['label', 'image', 'path', 'tff']) 
+def createDf(labels, images, paths):
+    df = pd.DataFrame(list(zip(labels, images, paths)), columns =['label', 'image', 'path']) 
     return df
 
 def resizeImages(img_path,size=(50,50)):
