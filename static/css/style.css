@@ -55,7 +55,7 @@ body {
     margin-top: 1em;
     padding-top: 1em;
     border-top: thin dotted }
-  table {
-    border-collapse: separate;
-    color: #5B5959
+
+  table, th, td {
+    border: 1px solid #5B5959;
   }

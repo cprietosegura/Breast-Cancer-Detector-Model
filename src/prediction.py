@@ -20,9 +20,9 @@ def predictNewImage(loaded_model,path):
     pred_nueva=loaded_model.predict(im)
     #print(pred_nueva)
     if pred_nueva == 0:
-        diagnosis={'Diagnosis':'Benign tumor'}
+        diagnosis={'Diagnóstico':'Tumor benigno'}
     else:
-        diagnosis={'Diagnosis':'Malignant tumor'}
+        diagnosis={'Diagnóstico':'Tumor maligno'}
     
     return diagnosis 
 

@@ -28,7 +28,7 @@ def uploader():
   f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
   # Retornamos una respuesta satisfactoria
   pred = prediction(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-  return jsonify(pred)
+  return render_template('image_diagnosis.html', pred=pred)
   #"<h2>Archivo subido exitosamente</h2>"
 
 
