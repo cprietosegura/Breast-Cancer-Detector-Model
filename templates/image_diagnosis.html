@@ -1,20 +1,33 @@
-<head>
-        <title>Histopathology Diagnosis</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css', v=0.01) }}">
-        <link rel="icon" type="image/png" href="./static/css/lazo.png">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>Histopathology Diagnosis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css', v=0.01) }}">
+    <link rel="icon" type="image/png" href="./static/css/lazo.png">
+</head>
 
  
 <body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Diagnóstico Histopatológico</h3>
+        </div>
   <table style="width:100%">
         <tr>
-          <th>Diagnóstico Histopatológico</th>
+          <th>{{ pred }}</th>
         </tr>
         <tr>
-          <td>{{ pred }}</td>
-          <td> Invasive Ductal Carcinoma (IDC), el subtipo más común de cáncer de mama. </td>
+          <td>Invasive Ductal Carcinoma (IDC), el subtipo más común de cáncer de mama. </td>
         </tr>
       </table> 
     
     </body>
+
+    </html>
