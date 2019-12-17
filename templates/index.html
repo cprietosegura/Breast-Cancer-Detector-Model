@@ -18,13 +18,13 @@
         <div class="header">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation"><a href="#">ASOCIACIÓN ESPAÑOLA CONTRA EL CÁNCER</a>
+                    
                     </li>
                 </ul>
             </nav>
             <h3 class="text-muted">Machine Learning App</h3>
         </div>
- 
+        
         <div class="jumbotron">
             <h1>Breast Cancer Detector</h1>
             <p class="lead"></p>
@@ -32,27 +32,26 @@
  
         <div class="row marketing">
             <div class="col-lg-6">
-                
+                <h4>BCD es una app de Machine Learning desarrollada para ayudar al personal médico en el diagnóstico de cáncer de mama.</h4>
                 <p>El cáncer de mama es el tipo de cáncer más frecuente entre las mujeres españolas.<br /> 
                     Aproximadamente 1 de cada 8 mujeres son diagnosticadas con cáncer de mama a lo largo de su vida.<br /> 
                     Hay una alta probabilidad de recuperación si el tumor es detectado en un estadio temprano.<br />
                 </p>
 
-
-                <h4>BCD es una app de Machine Learning desarrollada para ayudar al personal médico en el diagnóstico de cáncer de mama.</h4>
-                <form action="/upload" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="archivo">
-                    <input type="submit">
-                   </form>
-                <p>BCD es una herramienta en desarrrollo. </p>
-                <p>El diagnóstico final debe ser confirmado por un doctor.  </p>
-            
+                
+                <h5>INSERTE UNA IMAGEN HISTOPATOLÓGICA: </h5>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="archivo">
+                        <input type="submit">
+                    </form>
+                <h6>*BCD es una herramienta en desarrrollo. El diagnóstico final debe ser confirmado por un doctor. </h6>
             </div>
 
         </div>
- 
+        <img src="./static/css/api_image.jpg">
+        
         <footer class="footer">
-            <p>&copy; Celia Prieto 2019</p>
+            <p>&copy; Celia Prieto Segura | 2019</p>
         </footer>
  
     </div>
