@@ -15,21 +15,21 @@ app.config['UPLOAD_FOLDER'] = './diagnosis'
 
 @app.route("/")
 def upload_file():
- # renderiamos la plantilla "formulario.html"
+ # devolvemos la plantilla "index.html"
  return render_template('index.html')
 
 @app.route("/upload", methods=['POST'])
 def uploader():
  if request.method == 'POST':
   # obtenemos el archivo del input "archivo"
-  f = request.files['archivo']
+  f = request.files["file"]
   filename = secure_filename(f.filename)
   # Guardamos el archivo en el directorio "Archivos PDF"
   f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-  # Retornamos una respuesta satisfactoria
+  # Retornamos una respuesta satisfactoria con la predicción
   pred = prediction(os.path.join(app.config['UPLOAD_FOLDER'], filename))
   return render_template('image_diagnosis.html', pred=pred)
-  #"<h2>Archivo subido exitosamente</h2>"
+  
 
 
 

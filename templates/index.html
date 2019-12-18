@@ -37,10 +37,12 @@
                 </p>
 
                 
-                <h5>INSERTE UNA IMAGEN HISTOPATOLÓGICA: </h5>
+                <h5>INSERTE UNA IMAGEN HISTOPATOLÓGICA </h5>
                     <form action="/upload" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="archivo">
-                        <input type="submit">
+                        <input type="file" name="file" id="file" class="inputfile"/>
+                        <label for="file">Cargar Imagen</label>
+                        <input type="submit" name="submit" id="submit" class="inputfile"/>
+                        <label for="submit">Hacer diagnóstico</label>
                     </form>
                 <h6>*BCD es una herramienta en desarrrollo. El diagnóstico final debe ser confirmado por un doctor. </h6>
             </div>
