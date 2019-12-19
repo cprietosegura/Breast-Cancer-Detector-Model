@@ -13,11 +13,12 @@ Organicé el dataset, procesé las imágenes con las librerías `Numpy` y `OpenC
 `Random Forest Classifier` fue el algoritmo de clasificación de `Sklearn` que mejores métricas obtuvo a la hora de hacer la predicción de los tumores. Utilicé `GridSearchCV` para obtener los mejores parámetros con los que entrenar el algoritmo, con los que el modelo consigue un accuracy de más del 80%.
 
 ## API
-Finalmente integré el modelo predictivo en una api desarrollada con `Flask` 
-que permite cargar una imagen y devuelve el diagnóstico de dicha imagen, confirmando si el tumor es maligno o si es benigno. Este es el interfaz de BCD: 
+Finalmente integré el modelo predictivo en una api desarrollada con `Flask` en entorno local, que permite cargar una imagen y devuelve el diagnóstico de dicha imagen, confirmando si el tumor es maligno o si es benigno. Esta es la interfaz de BCD: 
 
 ![alt text](https://github.com/cprietosegura/Breast-Cancer-Detector-Model/blob/master/notebooks/api_bcd.jpg)
 
+Una vez cargada la imagen, se envía la consulta y devuelve el diagnóstico:
 
+![alt text](https://github.com/cprietosegura/Breast-Cancer-Detector-Model/blob/master/notebooks/api_bcd_diagnosis.jpg)
 
 
