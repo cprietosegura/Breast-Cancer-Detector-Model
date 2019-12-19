@@ -4,7 +4,7 @@ import cv2
 import os
 import pickle
 import numpy as np
-from scipy.fftpack import fft
+#from scipy.fftpack import fft
 
 #en este script están las funciones para crear un dataframe a partir 
 # de las imagenes y exportarlo
@@ -32,12 +32,12 @@ def readImages(path1,path0):
     return images,labels,paths
 
 
-def fftransform(lst):
+"""def fftransform(lst):
     '''fft to all the array images in a list'''
     tff=[]
     for im in lst:
         tff.append(np.abs(fft(im,512)))
-    return tff
+    return tff"""
 
 def createDf(labels, images, paths):
     df = pd.DataFrame(list(zip(labels, images, paths)), columns =['label', 'image', 'path']) 

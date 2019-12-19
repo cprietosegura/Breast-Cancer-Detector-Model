@@ -1,6 +1,9 @@
-os 
-shutil 
-from __future__ import print_function
-cv2
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+Flask==1.1.1
+numpy==1.17.4
+opencv-python==4.1.2.30
+pandas==0.24.2
+scipy==1.2.1
+Werkzeug==0.16.0
+pickleshare==0.7.5
+jsonschema==3.1.1
+glob3
